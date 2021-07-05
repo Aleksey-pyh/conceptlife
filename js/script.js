@@ -39,6 +39,9 @@ $('.slider_for').slick({
     // fade: true,
     // cssEase: 'linear'
 });
+$('.diler_head').on('click',function(){
+    $('.diler_body').toggleClass('active');
+})
 $(document).ready(function () {
     $('.slider_for').on('afterChange', function (event, slick, currentSlide, nextSlide) {
         changeActive($('.slider_nav-item')[currentSlide]);
@@ -52,12 +55,12 @@ $(document).ready(function () {
         $('.slider_for-hiddenTech-head').each(function () {
             $(this).on('click', function () {
                 let parent = $(this).parent('.slider_for-hiddenTech');
-                if ($(parent).hasClass('active')) { 
+                if ($(parent).hasClass('active')) {
                     $(parent).removeClass('active');
-                    $(parent).css('transform','translateY(0)');
+                    $(parent).css('transform', 'translateY(0)');
                     console.log($(parent).css('transform'));
                 } else {
-                    $(parent).css('transform','translateY(-' + (parseInt($(parent).children('.slider_for-hiddenTech-body').height()) + 40) + 'px)');
+                    $(parent).css('transform', 'translateY(-' + (parseInt($(parent).children('.slider_for-hiddenTech-body').height()) + 80) + 'px)');
                     console.log($(parent).css('transform'));
                     $(parent).addClass('active');
                 }
